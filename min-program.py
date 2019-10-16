@@ -16,3 +16,6 @@ def login():
         return do_the_login()
     else:
         return show_the_login_form()
+
+if __name__=='__main__':
+    app.run()
