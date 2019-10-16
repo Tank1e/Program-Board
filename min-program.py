@@ -1,10 +1,11 @@
 from flask import Flask
 from flask import request
+from flask import render_template
 app = Flask(__name__)
 
 @app.route('/')
-def root():
-    return 'Index page'
+def home():
+    return render_template('home.html')
 
 @app.route('/hello')
 def greet():
@@ -16,7 +17,7 @@ def login():
         return do_the_login()
     else:
         return show_the_login_form()
-def do_the_login_form()
+#def do_the_login_form()
     
 
 if __name__=='__main__':
