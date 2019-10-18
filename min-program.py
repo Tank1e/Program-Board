@@ -12,7 +12,8 @@ app = Flask(__name__)
 @app.route('/',methods=['GET','POST'])
 def home():
     if request.method == 'GET':
-        return render_template('home.html')
+        database = fetch_data()
+        return render_template('home.html',**locals())
     else:
         return redirect(url_for('commit'))
 
@@ -23,8 +24,9 @@ def commit():
         return render_template('commit.html')
     else:
         #return redirect(url_for('greet'))
-        write_date()
-        return '您的提交成功了'
+        write_data()
+        #print_data()
+        return redirect('/')
 
 
 #这是一个测试页面
@@ -56,7 +58,7 @@ def login():
 #if request.method == 'POST':
 #这是向数据库写入信息的函数数据库信息
 #：host="localhost",user="root",passwd="123123",database="test_for_board"
-def write_date():              
+def write_data():              
     print (request.form.get('name'),request.form.get('text'))            
     mydb = mysql.connector.connect(host="localhost",user="root",passwd="123123",database="test_for_board")
     mycu = mydb.cursor()       
@@ -67,10 +69,18 @@ def write_date():
     #val = ('localtest','localtest')
     mycu.execute(sql,val)
     mydb.commit()
-    print('done')
+    #print('done')
     mycu.close()
     mydb.close()
-
+#打印信息函数
+def fetch_data():
+    mydb = mysql.connector.connect(host="localhost",user="root",passwd="123123",database="test_for_board")
+    mycu = mydb.cursor()
+    mycu.execute("select * from text")
+    p=mycu.fetchall()
+    #for tip in p:
+    #    print(tip) 服务器端打印测试
+    return p
 
 if __name__=='__main__':
     app.run()

@@ -13,11 +13,11 @@
 		</title>
 	</head>
 
-	
-	
-	
 	<body>
 		<h1 id=h1_text>HOME</h1>
+		{% for k in database %}
+			<p>{{ k }}</p>
+			{% endfor %}
 		<form method = 'POST'>
 			<button type='submit'>我要留言</button>
 		</form>
