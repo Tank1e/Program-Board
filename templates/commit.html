@@ -3,10 +3,10 @@
 <html lang="en">
 <head>
 <style>
-	input{
+	.textboard{
               	border: 1px solid #ccc; 
                	padding: 7px 0px;
-               	border-radius: 3px; /*css3属性IE不支持*/
+               	border-radius: 3px;
 		padding-left:5px;
 	}
 	.back{
@@ -41,14 +41,14 @@
             
 	    <tr>
                 <th style = "font-size:20px">我是：</th>
-                <p> <td><input name = 'name' placeholder='name' type = 'text' ></td></p> 
+                <p> <td><input name = 'name' placeholder='name' type = 'text' class ="textboard"></td></p> 
 		<!--<th style = "font-size:20px">我对着天空大声喊：</th>	-->
 	    </tr>
             <tr>
 		<th style = "font-size:20px">我对着天空大声喊：</th>
 		<!--    <p> <td><input name = 'name' placeholder='name' type = 'text' ></td></p>
 		-->	
-		<p><td><input name = 'text' placeholder='Hello world!' style = "width:600px;height:200px;"></td></p>
+		<p><td><textarea name = 'text' placeholder='Hello world!' style = "width:600px;height:200px;" class = "textboard"></textarea></td></p>
             </tr> 
         </table>
 <p><button type = 'submit'>提交！</button></p>
