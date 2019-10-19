@@ -1,25 +1,53 @@
 <!DOCTYPE html>
 <html>
+<head>
 	<style>
-	# h1_text{
-		font-style:italic;
+	#h1_text{
+		font-style : italic;
+		text-align : center;
 	}
 	
+	#p_user{
+		font-style: italic;
+		font-size: 30px;
+		margin-left: 20px;
+	}
+	#p_text{
+		font-style: Arial;
+		font-size: 20px;
+		text-indent: 1cm;
+		margin-left: 30px;
+	}
+	#back {
+   	 position: fixed;
+   	 padding: 0;
+   	 margin: 0;
+	 top: 0;
+   	 left: 0;
+   	 width: 100%;
+   	 height: 100%;
+   	 background: linear-gradient(to bottom,rgba(102, 153, 204,50),rgba(255, 160, 122,50),rgba(255, 187, 255,50));
+	}
 	</style>
-	<head>
-		<metel charset="UTF-8">
-		<title>
-		Home
-		</title>
-	</head>
+		<meta charset="UTF-8">
+		<title>Tank1e's 留言板</title>
+	
 
-	<body>
-		<h1 id=h1_text>HOME</h1>
-		{% for k in database %}
-			<p>{{ k }}</p>
-			{% endfor %}
-		<form method = 'POST'>
-			<button type='submit'>我要留言</button>
-		</form>
-	</body>
+</head>
+
+
+<body>
+<div id="back">
+	<h1 id="h1_text">Board</h1>
+	{% for k in database %}
+	<p id="p_user">{{ k[0] }} say:</p>
+	<p id="p_text">{{ k[1] }}</p>
+	{% endfor %}
+	
+
+	<form method = 'POST'>
+		<button type='submit'>我要留言</button>
+	</form>
+</div>
+</body>
 </html>
