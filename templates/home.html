@@ -7,12 +7,12 @@
 		text-align : center;
 	}
 	
-	#p_user{
+	p.user{
 		font-style: italic;
 		font-size: 30px;
 		margin-left: 20px;
 	}
-	#p_text{
+	p.text{
 		font-style: Arial;
 		font-size: 20px;
 		text-indent: 1cm;
@@ -47,13 +47,13 @@
 <body>
 	<h1 id="h1_text">Board</h1>
 	{% for k in database %}
-	<p id="p_user">{{ k[1] }} say:</p>
-	<p id="p_text">{{ k[2] }}</p>
+	<p class="user">{{ k[1] }} say:</p>
+	<p class="text">{{ k[2] }}</p>
 	{% endfor %}
 	
 
-	<form method = 'POST'>
-		<button type='submit'>我要留言</button>
+	<form method="POST">
+		<button type="submit">我要留言</button>
 	</form>
 </body>
 </html>
