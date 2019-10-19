@@ -15,8 +15,9 @@ def home():
         database = fetch_data()
         return render_template('home.html',**locals())
     else:
-        return redirect('http://122.51.48.86/commit')
-        #return redirect('commit')
+        return redirect(url_for('commit'))
+
+
 #这是提交页面，由‘/’主界面post跳转
 @app.route('/commit',methods=['GET','POST'])
 def commit():
@@ -26,8 +27,7 @@ def commit():
         #return redirect(url_for('greet'))
         write_data()
         #print_data()
-        return redirect('http://122.51.48.86')
-        #return redirect(url_for('/'))
+        return redirect(url_for('home'))
 
 
 #这是一个测试页面
