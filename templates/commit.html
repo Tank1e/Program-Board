@@ -1,25 +1,59 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>留言</title>
+<style>
+	input{
+              	border: 1px solid #ccc; 
+               	padding: 7px 0px;
+               	border-radius: 3px; /*css3属性IE不支持*/
+		padding-left:5px;
+	}
+	.back{
+         	padding: 0;
+         	margin-left: -100;
+         	margin-top: -100;
+         	width: 1700px;
+         	height: 950px;
+         	background: linear-gradient(to top,rgba(102, 153, 204,50),rgba(255, 160, 122,50),rgba(255, 187, 255,50),rgba(102, 153, 204,50));
+        	background-repeat: repeat-y;
+        }
+        button{
+                width: 100px;
+                height: 100px; 
+                border-radius: 50%;             
+                border: none;
+                background: #D2B48C;            
+                margin-left: 450px;             
+        }
+
+</style>
+	<meta charset="UTF-8">
+	<title>留言</title>
+
+
 </head>
 <body>
-    <p style = 'color:chartreuse'>{{message}}</p>
-    <form method = 'POST'>
+	<div class = "back">
+<form method = 'POST'>
         <table>
-            <caption>嘤嘤嘤</caption>
+            <caption style = "font-size:30px">Why not say hello to everyone?</caption>
+            
+	    <tr>
+                <th style = "font-size:20px">我是：</th>
+                <p> <td><input name = 'name' placeholder='name' type = 'text' ></td></p> 
+		<!--<th style = "font-size:20px">我对着天空大声喊：</th>	-->
+	    </tr>
             <tr>
-                <th>用户名</th>
-                <th>内容</th>
-            </tr>
-            <tr>
-                <td><input name = 'name' placeholder='name' type = 'text' ></td>
-		
-		<p><td width = "200"><input name = 'text' placeholder='Hello world!'></td></p>
+		<th style = "font-size:20px">我对着天空大声喊：</th>
+		<!--    <p> <td><input name = 'name' placeholder='name' type = 'text' ></td></p>
+		-->	
+		<p><td><input name = 'text' placeholder='Hello world!' style = "width:600px;height:200px;"></td></p>
             </tr> 
         </table>
-        <p><button type = 'submit'>提交</button></p>
-    </form>
+<p><button type = 'submit'>提交！</button></p>
+</form>
+
+	</div>
 </body>
 </html>
