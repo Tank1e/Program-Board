@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html>
 <head>
 	<style>
@@ -19,7 +19,6 @@
 		margin-left: 30px;
 	}
 	#back {
-   	 position: fixed;
    	 padding: 0;
    	 margin: 0;
 	 top: 0;
@@ -40,8 +39,8 @@
 <div id="back">
 	<h1 id="h1_text">Board</h1>
 	{% for k in database %}
-	<p id="p_user">{{ k[0] }} say:</p>
-	<p id="p_text">{{ k[1] }}</p>
+	<p id="p_user">{{ k[1] }} say:</p>
+	<p id="p_text">{{ k[2] }}</p>
 	{% endfor %}
 	
 
